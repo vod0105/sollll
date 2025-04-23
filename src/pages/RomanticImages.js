@@ -223,8 +223,8 @@ function RomanticImages() {
       setUploading(false);
       return true;
     } catch (error) {
-      console.error("Upload failed:", error);
-      alert("Upload failed: Could not save your photo. Please try again.");
+      console.error("Upload failed: Do dung lượng ảnh quá lớn" );
+      alert("Upload failed: Do dung lượng ảnh quá lớn, vui lòng nén ảnh hoặc dùng ảnh khác.");
       setUploading(false);
       return false;
     }
