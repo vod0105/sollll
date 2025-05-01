@@ -41,42 +41,42 @@ const initialRomanticImages = [
     id: "initial-0",
     imageBase64: require("../assets/images/a2.jpg"),
     caption: "Dễ thương góa, iuu emm nhiều 🌹",
-    createdAt: new Date("2025-05-01T08:00:00Z"),
+    createdAt: new Date("2025-04-20T08:00:00Z"),
     uid: "static",
   },
   {
     id: "initial-1",
     imageBase64: require("../assets/images/a3.jpg"),
     caption: "Tình cờ được ngồi cạnh em.",
-    createdAt: new Date("2025-05-01T09:00:00Z"),
+    createdAt: new Date("2025-04-20T09:00:00Z"),
     uid: "static",
   },
   {
     id: "initial-2",
     imageBase64: require("../assets/images/a4.jpg"),
     caption: "Gái xinh đi đá bóng >>.",
-    createdAt: new Date("2025-05-01T10:00:00Z"),
+    createdAt: new Date("2025-04-20T10:00:00Z"),
     uid: "static",
   },
   {
     id: "initial-3",
     imageBase64: require("../assets/images/a5.jpg"),
     caption: "Eiuu tổ quốc, zì tổ quốc có em đó.😍",
-    createdAt: new Date("2025-05-01T11:00:00Z"),
+    createdAt: new Date("2025-04-20T11:00:00Z"),
     uid: "static",
   },
   {
     id: "initial-4",
     imageBase64: require("../assets/images/a6.jpg"),
     caption: "Dễ thương quá trời!",
-    createdAt: new Date("2025-05-01T12:00:00Z"),
+    createdAt: new Date("2025-04-20T12:00:00Z"),
     uid: "static",
   },
   {
     id: "initial-5",
     imageBase64: require("../assets/images/a1.jpg"),
     caption: "Iuu emm lắm, nhớ em nhiều.",
-    createdAt: new Date("2025-05-01T13:00:00Z"),
+    createdAt: new Date("2025-04-20T13:00:00Z"),
     uid: "static",
   },
 ];
@@ -368,7 +368,7 @@ function RomanticImages() {
                     </span>
                   </div>
                   <div className="image-timestamp">
-                    Posted on: {formatDate(img.createdAt)}
+                    {formatDate(img.createdAt)}
                   </div>
                 </div>
               ))
