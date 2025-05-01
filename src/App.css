@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #fff;
+}
+
+/* Gradients for screens */
+.login-gradient-bg {
+  background: linear-gradient(135deg, #ff9eb6, #ffaa9f, #f8ffae);
+}
+.home-gradient-bg {
+  background: linear-gradient(135deg, #ffb7d3, #fffde4);
+}
+.romantic-gradient-bg {
+  background: linear-gradient(135deg, #fffde4, #ffc5e6);
+}
+.loveletter-gradient-bg {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+/* Login Styles */
+.login-box {
+  background: #fff6fbdd;
+  border-radius: 22px;
+  padding: 30px 22px 24px 22px;
+  margin: 0 auto;
+  width: 340px;
+  max-width: 92vw;
+  box-shadow: 0px 6px 18px 0px #ce43741a;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ca1442;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 1.2px;
+}
+.login-input {
+  border: 1px solid #fdc3da;
+  border-radius: 14px;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 18px;
+  background: #ffeef6;
+  color: #ca1442;
+}
+.login-error {
+  color: #ca1442;
+  margin-top: 4px;
+  margin-bottom: -7px;
+  text-align: center;
+  font-weight: bold;
+}
+.login-btn {
+  background: #ff8dae;
+  padding: 14px;
+  margin-top: 16px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.1px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Home Styles */
+.home-headerBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 10px;
+  justify-content: center;
+}
+.home-greeting {
+  font-size: 32px;
+  color: #ca1442;
+  margin: 0 16px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+.home-subheader {
+  font-size: 17px;
+  color: #f56882;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.home-bigBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  width: 73vw;
+  max-width: 320px;
+  padding: 18px 0;
+  margin-bottom: 25px;
+  box-shadow: 0px 6px 18px 0px #ca14421a;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow .2s;
+}
+.home-bigBtn.pink {
+  background: #fb7098;
+  color: white;
+}
+.home-bigBtn.yellow {
+  background: #fec883;
+  color: #b5651d;
+}
+
+/* Back Button */
+.backBtn {
+  background: rgba(253,195,218,0.65);
+  border: none;
+  padding: 7px 15px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fb7098;
+  margin: 14px 0 26px 7px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #fb70981a;
+}
+
+.romantic-heading,.loveletter-heading {
+  font-size: 32px;
+  color: #ca1442;
+  margin: 18px 0 5px 0;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  font-family: 'Pacifico', cursive;
+}
+
+@media (max-width: 500px) {
+  .login-box, .home-bigBtn {
+    width: 92vw;
+    max-width: 96vw;
+    font-size: 19px;
+  }
+}
+
+
+
