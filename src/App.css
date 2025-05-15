@@ -8,7 +8,7 @@ body {
 
 /* Gradients for screens */
 .login-gradient-bg {
-  background: linear-gradient(135deg, #ff9eb6, #ffaa9f, #f8ffae);
+  background: linear-gradient(135deg, #2ecd6e, #60c991, #f8ffae);
 }
 .home-gradient-bg {
   background: linear-gradient(135deg, #ffb7d3, #fffde4);
@@ -58,7 +58,7 @@ body {
   font-weight: bold;
 }
 .login-btn {
-  background: #ff8dae;
+  background: #08a34b;
   padding: 14px;
   margin-top: 16px;
   border-radius: 16px;

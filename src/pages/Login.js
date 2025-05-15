@@ -29,7 +29,7 @@ function Login() {
       style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}
     >
       <form className="login-box" onSubmit={handleLogin}>
-        <FaHeart size={44} color="#ca1442" style={{ alignSelf: "center", marginBottom: 12 }} />
+      
         <div className="login-title">Login</div>
         <input
           className="login-input"

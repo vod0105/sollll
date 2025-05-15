@@ -19,6 +19,7 @@ import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useSwipeable } from "react-swipeable"; // Import react-swipeable
 import "../styles/RomanticImages.css";
 
 // Firebase configuration
@@ -94,6 +95,7 @@ function RomanticImages() {
   const [lastDoc, setLastDoc] = useState(null);
   const [zoomModalVisible, setZoomModalVisible] = useState(false);
   const [zoomImage, setZoomImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(-1); // Track current image index
   const [isConnected, setIsConnected] = useState(navigator.onLine);
 
   // Format timestamp for display
@@ -264,10 +266,41 @@ function RomanticImages() {
     }
   };
 
-  const handleZoom = (img) => {
+  const handleZoom = (img, index) => {
     setZoomImage(img);
+    setCurrentImageIndex(index); // Set the current image index
     setZoomModalVisible(true);
   };
+
+  // Swipe handlers for navigating images
+  const handleSwipe = (direction) => {
+    if (direction === "Left" && currentImageIndex < images.length - 1) {
+      // Swipe left -> next image
+      setCurrentImageIndex((prev) => prev + 1);
+      setZoomImage(images[currentImageIndex + 1]);
+    } else if (direction === "Right" && currentImageIndex > 0) {
+      // Swipe right -> previous image
+      setCurrentImageIndex((prev) => prev - 1);
+      setZoomImage(images[currentImageIndex - 1]);
+    } else if (direction === "Up" && currentImageIndex < images.length - 1) {
+      // Swipe up -> next image
+      setCurrentImageIndex((prev) => prev + 1);
+      setZoomImage(images[currentImageIndex + 1]);
+    } else if (direction === "Down" && currentImageIndex > 0) {
+      // Swipe down -> previous image
+      setCurrentImageIndex((prev) => prev - 1);
+      setZoomImage(images[currentImageIndex - 1]);
+    }
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("Left"),
+    onSwipedRight: () => handleSwipe("Right"),
+    onSwipedUp: () => handleSwipe("Up"),
+    onSwipedDown: () => handleSwipe("Down"),
+    trackMouse: true, // Optional: allows mouse drag to simulate swipe
+    delta: 10, // Minimum distance for a swipe
+  });
 
   return (
     <div className="romantic-gradient-bg">
@@ -354,7 +387,7 @@ function RomanticImages() {
                 <div
                   key={img.id || idx}
                   className="feed-card"
-                  onClick={() => handleZoom(img)}
+                  onClick={() => handleZoom(img, idx)} // Pass index to handleZoom
                 >
                   <img
                     src={img.uid === "static" ? img.imageBase64 : img.imageBase64}
@@ -430,7 +463,7 @@ function RomanticImages() {
           open={zoomModalVisible}
           onClose={() => setZoomModalVisible(false)}
         >
-          <div className="zoom-modal">
+          <div className="zoom-modal" {...swipeHandlers}> {/* Add swipe handlers */}
             <button
               className="zoom-close-btn"
               onClick={() => setZoomModalVisible(false)}
@@ -456,6 +489,21 @@ function RomanticImages() {
                 )}
               </>
             )}
+            {/* Navigation arrows for additional UX */}
+            {/* <button
+              className="zoom-nav-btn zoom-prev-btn"
+              onClick={() => handleSwipe("Right")}
+              disabled={currentImageIndex <= 0}
+            >
+              ←
+            </button>
+            <button
+              className="zoom-nav-btn zoom-next-btn"
+              onClick={() => handleSwipe("Left")}
+              disabled={currentImageIndex >= images.length - 1}
+            >
+              →
+            </button> */}
           </div>
         </Modal>
       </div>
